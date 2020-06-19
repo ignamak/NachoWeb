@@ -2628,20 +2628,18 @@ input, select, textarea {
 			height: 250px;
 		}
 
-		.image.fit {
-			display: inherit;
-			margin: 2.5rem 0;
-			width: 100%;
-			height: 250px;
+		.image.fit{
+			height: 240px;
 		}
 
 			.image.fit:first-child {
 				margin-top: 0;
 			}
 
-			.image.fit img {
-				max-width: 100%;
-				max-height: 100%;
+			.image.fit img{
+				width: 100%;
+				height: 100%;
+				object-fit: cover;
 			}
 
 		.image.main {
