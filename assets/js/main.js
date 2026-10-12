@@ -12,7 +12,12 @@
 		$header = $('#header'),
 		$nav = $('#nav'),
 		$main = $('#main'),
-		$navPanelToggle, $navPanel, $navPanelInner;
+		$navPanelToggle, $navPanel, $navPanelInner,
+		reduceMotion = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+	// Reduced motion: jump instead of animating (scrolly) and skip parallax.
+		if (reduceMotion)
+			$.fx.off = true;
 
 	// Breakpoints.
 		breakpoints({
@@ -87,7 +92,8 @@
 				if (browser.name == 'ie'			// IE
 				||	browser.name == 'edge'			// Edge
 				||	window.devicePixelRatio > 1		// Retina/HiDPI (= poor performance)
-				||	browser.mobile)					// Mobile devices
+				||	browser.mobile					// Mobile devices
+				||	reduceMotion)					// prefers-reduced-motion
 					off();
 
 			// Enable everywhere else.

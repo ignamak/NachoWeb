@@ -1,0 +1,743 @@
+/*
+	Design layer for ILR portfolio.
+	Loaded after main.css (Massively by HTML5 UP) and only overrides it, so
+	removing this file falls back to the stock template.
+
+	Contents
+	  1. Tokens
+	  2. Typography
+	  3. Links, buttons, focus
+	  4. Header, nav, nav panel
+	  5. Page layout and rhythm
+	  6. Entry pattern (Career timeline, Portfolio bosses, Student projects)
+	  7. Media (images, galleries, logos)
+	  8. NDA tiles (Portfolio / Virtuos)
+	  9. Older projects dropdown
+	 10. Footer and copyright
+	 11. Responsive
+	 12. Reduced motion
+*/
+
+/* 1. Tokens */
+
+	:root {
+		--ink: #212931;            /* body text on white: 14.9:1 */
+		--ink-muted: #5b6470;      /* meta text on white: 6.0:1 */
+		--rule: #e3e6ea;
+		--surface: #ffffff;
+		--surface-alt: #f4f5f7;
+		--dark: #1e252d;           /* page background, media mats */
+		--accent: #c4462b;         /* ember, on light surfaces: 4.9:1 */
+		--accent-bright: #f0775f;  /* ember, on dark surfaces: 5.3:1 */
+		--radius: 6px;
+		--measure: 46rem;          /* content column, about 70-75 characters */
+		--space-entry: 3.5rem;
+	}
+
+/* 2. Typography */
+
+	body, input, select, textarea {
+		line-height: 1.8;
+	}
+
+	p {
+		text-align: left;
+		margin: 0 0 1.5rem 0;
+	}
+
+	strong, b {
+		font-weight: 700;
+	}
+
+	h1, h2, h3, h4, h5, h6 {
+		margin: 0 0 1rem 0;
+	}
+
+	#main > .post header.major > h1,
+	#main > .post header.major h2 {
+		font-size: 3.25rem;
+		line-height: 1.1;
+		margin: 0;
+	}
+
+	#main h3 {
+		font-size: 1.125rem;
+		line-height: 1.4;
+		letter-spacing: 0.1em;
+	}
+
+	/* Role / date line under an entry title. */
+	header > h3 + p {
+		color: var(--ink-muted);
+		font-size: 0.875rem;
+		font-style: italic;
+		line-height: 1.6;
+		margin: -0.5rem 0 1.5rem 0;
+	}
+
+	ul {
+		margin: 0 0 1.75rem 0;
+		padding-left: 1.25rem;
+	}
+
+		ul li {
+			padding-left: 0.375rem;
+			margin-bottom: 0.375rem;
+		}
+
+		#main ul:not(.actions):not(.icons) li::marker {
+			color: var(--accent);
+		}
+
+/* 3. Links, buttons, focus */
+
+	a {
+		color: var(--ink);
+		border-bottom: solid 1px rgba(196, 70, 43, 0.45);
+	}
+
+		a:hover {
+			color: var(--accent) !important;
+			border-bottom-color: var(--accent);
+		}
+
+		a:active {
+			color: #9e3720 !important;
+		}
+
+	/* Keyboard focus: one ring style everywhere, light or dark surface. */
+	a:focus { outline: none; }
+
+	a:focus-visible,
+	button:focus-visible,
+	.button:focus-visible,
+	summary:focus-visible {
+		outline: 3px solid var(--accent);
+		outline-offset: 3px;
+		border-radius: 2px;
+	}
+
+	#intro a:focus-visible,
+	#header a:focus-visible,
+	#nav a:focus-visible,
+	#copyright a:focus-visible,
+	#navPanelToggle:focus-visible {
+		outline-color: var(--accent-bright);
+	}
+
+	.button,
+	#footer .button {
+		border-radius: var(--radius);
+		box-shadow: inset 0 0 0 2px var(--ink);
+		color: var(--ink) !important;
+		min-height: 2.75rem;
+	}
+
+		.button:hover,
+		#footer .button:hover {
+			box-shadow: inset 0 0 0 2px var(--accent);
+			color: var(--accent) !important;
+		}
+
+		.button:active,
+		#footer .button:active {
+			background-color: rgba(196, 70, 43, 0.08);
+		}
+
+		.button.primary,
+		#footer .button.primary {
+			background-color: var(--accent);
+			box-shadow: none;
+			color: #ffffff !important;
+		}
+
+			.button.primary:hover,
+			#footer .button.primary:hover {
+				background-color: #a93a22;
+				color: #ffffff !important;
+			}
+
+			.button.primary:active,
+			#footer .button.primary:active {
+				background-color: #8f311d;
+			}
+
+	/* "Continue" circle on the intro. */
+	#intro .button {
+		box-shadow: inset 0 0 0 2px #ffffff;
+		color: #ffffff !important;
+	}
+
+		#intro .button.icon.solo {
+			border-radius: 100%;
+		}
+
+		#intro .button:hover {
+			box-shadow: inset 0 0 0 2px var(--accent-bright);
+			color: var(--accent-bright) !important;
+		}
+
+	/* Social icons (nav, nav panel, footer). */
+	ul.icons li a.icon {
+		border-bottom: 0;
+		display: inline-block;
+		border-radius: 100%;
+	}
+
+		ul.icons li a.icon:hover:before,
+		#nav ul.icons li a.icon:hover:before {
+			color: var(--accent);
+		}
+
+		ul.icons.alt li .icon:before {
+			box-shadow: inset 0 0 0 2px var(--rule);
+		}
+
+		ul.icons.alt li a.icon:hover:before,
+		#nav ul.icons.alt li a.icon:hover:before {
+			box-shadow: inset 0 0 0 2px var(--accent);
+		}
+
+/* 4. Header, nav, nav panel */
+
+	/* Same title plate on every page. */
+	#header .logo {
+		border-width: 4px !important;
+		border-radius: var(--radius);
+		min-width: 12rem;
+		padding: 1rem 2rem;
+	}
+
+		#header .logo:hover {
+			border-color: var(--accent-bright) !important;
+			color: var(--accent-bright) !important;
+		}
+
+	#nav {
+		background: rgba(255, 255, 255, 0.14);
+		border-radius: var(--radius) var(--radius) 0 0;
+		-webkit-backdrop-filter: blur(4px);
+		backdrop-filter: blur(4px);
+	}
+
+		#nav a:hover {
+			color: var(--accent-bright) !important;
+		}
+
+		#nav ul.links li a {
+			font-size: 0.8rem;
+			position: relative;
+		}
+
+			/* main.css sets outline: none on these; restore an inset ring
+			   (the nav clips anything drawn outside it). */
+			#nav ul.links li a:focus-visible {
+				outline: 3px solid var(--accent-bright);
+				outline-offset: -4px;
+			}
+
+			#nav ul.links li.active a:focus-visible {
+				outline-color: var(--accent);
+			}
+
+			#nav ul.links li a:hover {
+				background-color: rgba(255, 255, 255, 0.1);
+				color: #ffffff !important;
+			}
+
+		/* Active page: white tab with an ember bar, readable without color. */
+		#nav ul.links li.active a {
+			color: var(--dark);
+		}
+
+			#nav ul.links li.active a::after {
+				content: '';
+				position: absolute;
+				left: 0;
+				right: 0;
+				top: 0;
+				height: 3px;
+				background: var(--accent);
+			}
+
+			#nav ul.links li.active a:hover {
+				color: var(--accent) !important;
+				background-color: transparent;
+			}
+
+		#nav ul.icons {
+			display: flex;
+			align-items: center;
+			gap: 0.25rem;
+		}
+
+			#nav ul.icons li {
+				padding: 0;
+				line-height: 1;
+			}
+
+			#nav ul.icons li .icon {
+				outline-offset: 0 !important;
+			}
+
+			#nav ul.icons li .icon:before {
+				width: 2.5rem;
+				height: 2.5rem;
+				line-height: 2.5rem;
+				font-size: 1.1rem;
+			}
+
+	#navPanelToggle {
+		border-radius: var(--radius);
+		min-height: 2.75rem;
+		line-height: 2.25rem;
+	}
+
+	#navPanel .links li a {
+		padding: 0.875rem 0;
+	}
+
+		#navPanel .links li.active a {
+			color: var(--accent);
+			box-shadow: inset 3px 0 0 var(--accent);
+			padding-left: 0.875rem;
+		}
+
+	#navPanel .close {
+		color: #5b6470;
+	}
+
+	#navPanel ul.icons li .icon:before {
+		width: 2.75rem;
+		height: 2.75rem;
+		line-height: 2.75rem;
+	}
+
+/* 5. Page layout and rhythm */
+
+	#main {
+		border-radius: 0 0 var(--radius) var(--radius);
+	}
+
+		/* One centered reading column: the side padding grows with the
+		   container so text never runs past --measure. */
+		#main > .post {
+			padding: 6rem max(4rem, calc(50% - (var(--measure) / 2))) 4rem;
+		}
+
+		#main > * {
+			border-top-color: var(--rule);
+		}
+
+		#main > .post header.major {
+			margin: 0 0 3.5rem 0;
+		}
+
+		/* Career and Student Projects ship an empty title block. Collapse it
+		   instead of leaving a large blank band at the top of the page. */
+		#main > .post header.major.is-empty {
+			display: none;
+		}
+
+	/* About page intro quote and portrait. */
+	#main > .post header.major > p {
+		color: var(--ink-muted);
+		font-size: 1.125rem;
+		font-style: italic;
+		line-height: 1.75;
+		max-width: var(--measure);
+		margin: 0 auto;
+	}
+
+	#main .image.left {
+		border-radius: var(--radius);
+		max-width: 11rem;
+		margin: 0.25rem 2rem 1.25rem 0;
+		overflow: hidden;
+		top: 0;
+	}
+
+		#main .image.left img {
+			width: 100%;
+		}
+
+/* 6. Entry pattern
+	Every Career job, Portfolio boss and Student project is an .entry: a
+	thin rail with an ember marker, title, meta line, media, then text. */
+
+	.entry {
+		position: relative;
+		margin: 0 0 var(--space-entry) 0;
+		padding: 0 0 0 2rem;
+		border-left: 2px solid var(--rule);
+	}
+
+		.entry::before {
+			content: '';
+			position: absolute;
+			left: -7px;
+			top: 0.45rem;
+			width: 12px;
+			height: 12px;
+			border-radius: 100%;
+			background: var(--surface);
+			box-shadow: inset 0 0 0 3px var(--accent);
+		}
+
+		.entry:last-child {
+			margin-bottom: 0;
+		}
+
+		.entry > header > h3,
+		.entry > h3 {
+			margin-bottom: 0.75rem;
+		}
+
+		.entry > :last-child,
+		.entry .row > * > :last-child {
+			margin-bottom: 0;
+		}
+
+/* 7. Media */
+
+	.box.alt {
+		margin: 0 0 1.5rem 0;
+	}
+
+	/* Every screenshot sits in the same 16:9 frame with the same radius. */
+	.image.fit {
+		display: block;
+		width: 100%;
+		height: auto;
+		aspect-ratio: 16 / 9;
+		margin: 0;
+		border-radius: var(--radius);
+		overflow: hidden;
+		background: var(--dark);
+	}
+
+		.image.fit img {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+		}
+
+		/* Portrait or square captures: show them whole on a dark mat. */
+		.image.fit.contain img {
+			object-fit: contain;
+		}
+
+		/* Logos: whole, on a light mat with breathing room. */
+		.image.fit.logo {
+			background: var(--surface-alt);
+			box-shadow: inset 0 0 0 1px var(--rule);
+		}
+
+			.image.fit.logo img {
+				object-fit: contain;
+				padding: 1.25rem;
+			}
+
+	/* Fallback for browsers without aspect-ratio. */
+	@supports not (aspect-ratio: 1 / 1) {
+		.image.fit {
+			height: 0;
+			padding-bottom: 56.25%;
+		}
+
+			.image.fit img {
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+	}
+
+	/* Hero image (Lords of the Fallen key art). */
+	.image-container {
+		text-align: center;
+	}
+
+		.image-container img {
+			display: block;
+			width: 100%;
+			max-width: 100%;
+			height: auto;
+			border-radius: var(--radius);
+		}
+
+/* 8. NDA tiles (abstract symbols only) */
+
+	.nda-tile {
+		position: relative;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		aspect-ratio: 16 / 9;
+		background:
+			radial-gradient(circle at 50% 50%, rgba(240, 119, 95, 0.12), transparent 60%),
+			var(--dark);
+		border-radius: var(--radius);
+		margin-bottom: 0.875rem;
+		overflow: hidden;
+	}
+
+		.nda-tile svg {
+			width: 4.5rem;
+			height: 4.5rem;
+		}
+
+		.nda-tile .nda-label {
+			position: absolute;
+			right: 0.75rem;
+			bottom: 0.5rem;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-weight: 900;
+			font-size: 0.65rem;
+			letter-spacing: 0.15em;
+			color: #9aa3ad;          /* 6.4:1 on --dark */
+		}
+
+		.nda-tile + strong {
+			display: block;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			font-weight: 900;
+			font-size: 0.875rem;
+			letter-spacing: 0.1em;
+			text-transform: uppercase;
+			margin-bottom: 0.25rem;
+		}
+
+		.nda-tile + strong + p {
+			color: var(--ink-muted);
+			font-size: 0.9rem;
+			line-height: 1.6;
+		}
+
+/* 9. Older projects dropdown */
+
+	details {
+		margin: var(--space-entry) 0 0 0;
+		border-top: 2px solid var(--rule);
+		padding-top: 1.5rem;
+	}
+
+		details > summary {
+			display: flex;
+			align-items: center;
+			gap: 0.75rem;
+			min-height: 2.75rem;
+			padding: 0.5rem 1.25rem;
+			border-radius: var(--radius);
+			background: var(--surface-alt);
+			box-shadow: inset 0 0 0 1px var(--rule);
+			cursor: pointer;
+			list-style: none;
+			font-family: "Source Sans Pro", Helvetica, sans-serif;
+			letter-spacing: 0.075em;
+			text-transform: uppercase;
+			font-size: 0.875rem;
+			transition: box-shadow 0.2s ease-in-out, color 0.2s ease-in-out;
+		}
+
+			details > summary::-webkit-details-marker {
+				display: none;
+			}
+
+			details > summary::before {
+				content: '';
+				width: 0.5rem;
+				height: 0.5rem;
+				border-right: 2px solid var(--accent);
+				border-bottom: 2px solid var(--accent);
+				transform: rotate(-45deg);
+				transition: transform 0.2s ease-in-out;
+				flex-shrink: 0;
+			}
+
+			details > summary strong {
+				font-weight: 900;
+			}
+
+			details > summary:hover {
+				box-shadow: inset 0 0 0 2px var(--accent);
+				color: var(--accent);
+			}
+
+		details[open] > summary {
+			margin-bottom: var(--space-entry);
+		}
+
+			details[open] > summary::before {
+				transform: rotate(45deg);
+			}
+
+/* 10. Footer and copyright */
+
+	#footer {
+		color: #4f5862;            /* 6.6:1 on footer grey */
+		border-radius: 0 0 var(--radius) var(--radius);
+	}
+
+		#footer h3,
+		#footer strong {
+			color: var(--ink);
+		}
+
+		#footer p,
+		#footer h3 {
+			font-size: 0.875rem;
+		}
+
+		#footer a {
+			color: var(--ink);
+		}
+
+	/* About page: main sits directly above the footer. */
+	#main + #footer {
+		margin-top: 0;
+	}
+
+		#main:has(+ #footer) {
+			border-radius: 0;
+		}
+
+	#copyright {
+		color: rgba(255, 255, 255, 0.7);
+	}
+
+		#copyright a:hover {
+			color: var(--accent-bright) !important;
+		}
+
+/* 11. Responsive */
+
+	@media screen and (max-width: 1280px) {
+		#main > .post {
+			padding-top: 5rem;
+		}
+	}
+
+	@media screen and (max-width: 980px) {
+		#main > .post header.major > h1,
+		#main > .post header.major h2 {
+			font-size: 2.75rem;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		:root {
+			--space-entry: 2.75rem;
+		}
+
+		#main > .post {
+			padding: 3rem 1.5rem 2rem;
+		}
+
+		#main > .post header.major {
+			margin-bottom: 2.25rem;
+		}
+
+		#main > .post header.major > h1,
+		#main > .post header.major h2 {
+			font-size: 2.1rem;
+			line-height: 1.15;
+		}
+
+		#main h3 {
+			font-size: 1rem;
+		}
+
+		.entry {
+			padding-left: 1.25rem;
+		}
+
+		/* Galleries on phones: one large shot, the rest as a pair below.
+		   Rows with an odd count lead with a full-width image. */
+		.row.gallery {
+			--gap: 0.75rem;
+			margin-top: calc(var(--gap) * -1);
+			margin-left: calc(var(--gap) * -1);
+		}
+
+			.row.gallery > * {
+				width: 50% !important;
+				padding: var(--gap) 0 0 var(--gap) !important;
+			}
+
+			.row.gallery > :first-child:nth-last-child(odd) {
+				width: 100% !important;
+			}
+
+		#main .image.left {
+			max-width: 8rem;
+			margin-right: 1.25rem;
+		}
+
+		/* Stacked NDA tiles: shorter so the three cards stay scannable. */
+		.nda-tile {
+			aspect-ratio: 21 / 9;
+		}
+
+		#intro h1 {
+			font-size: 2.6rem;
+		}
+	}
+
+	@media screen and (max-width: 480px) {
+		#main > .post {
+			padding: 2.5rem 1.25rem 1.5rem;
+		}
+
+		#main .image.left {
+			float: none;
+			display: block;
+			max-width: 10rem;
+			margin: 0 auto 1.75rem;
+		}
+
+		#intro h1 {
+			font-size: 2.25rem;
+		}
+
+		.nda-tile svg {
+			width: 3.75rem;
+			height: 3.75rem;
+		}
+	}
+
+	/* Bigger touch targets where the pointer is coarse. */
+	@media (pointer: coarse) {
+		ul.icons li .icon:before {
+			width: 2.75rem !important;
+			height: 2.75rem !important;
+			line-height: 2.75rem !important;
+		}
+
+		#footer .button {
+			min-height: 3rem;
+		}
+	}
+
+/* 12. Reduced motion */
+
+	@media (prefers-reduced-motion: reduce) {
+		*, *::before, *::after {
+			animation-duration: 0.01ms !important;
+			animation-iteration-count: 1 !important;
+			transition-duration: 0.01ms !important;
+			transition-delay: 0s !important;
+			scroll-behavior: auto !important;
+		}
+
+		/* No parallax and no slide-in offsets. */
+		#wrapper > .bg {
+			transform: none !important;
+		}
+
+		#intro.hidden,
+		body.is-preload #intro,
+		#intro + #header .logo,
+		body.is-preload #intro:not(.hidden) + #header + #nav {
+			transform: none !important;
+		}
+	}
