@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Ignacio López Rivas: boss encounters and enemy AI on The Lords of the Fallen, and NPC combat work on an unannounced AAA title." />
     <title>ILR - Portfolio</title>
     <link rel="stylesheet" href="assets/css/main.css" />
     <noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
@@ -15,6 +16,26 @@
             height: auto; /* Maintain image aspect ratio */
             display: inline-block; /* Ensure proper alignment and spacing */
         }
+        /* NDA placeholder tiles (Virtuos section) */
+        .nda-tile {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 9em;
+            background: #1f1d1a;
+            border: 1px solid #3a3733;
+            margin-bottom: 0.75em;
+        }
+        .nda-tile svg { width: 5em; height: 5em; }
+        .nda-tile .nda-label {
+            position: absolute;
+            right: 0.75em;
+            bottom: 0.5em;
+            font-size: 0.65em;
+            letter-spacing: 0.15em;
+            color: #8a857d;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -24,7 +45,7 @@
 
         <!-- Header -->
         <header id="header">
-            <a href="Portfolio.html" class="logo">Experience</a>
+            <a href="Portfolio.html" class="logo">Portfolio</a>
         </header>
 
         <!-- Nav -->
@@ -36,6 +57,7 @@
                 <li><a href="StudentProjects.html">Student Projects</a></li>
             </ul>
             <ul class="icons">
+                <li><a href="https://www.linkedin.com/in/ignaciolr" class="icon brands fa-linkedin-in" target="_blank" rel="noopener"><span class="label">LinkedIn</span></a></li>
                 <li><a href="https://twitter.com/NachoLR89" class="icon brands fa-twitter" target="_blank"><span class="label">Twitter</span></a></li>
             </ul>
         </nav>
@@ -60,17 +82,18 @@
                 </p>
                 <ul>
                     <li>Designing and scripting boss combat mechanics, ensuring challenging and engaging encounters for players.</li>
+                    <li>Building enemy AI in Unreal Engine with Behavior Trees, State Trees, EQS and AI Perception, and abilities with the Gameplay Ability System, all data-driven.</li>
                     <li>Collaborating with the art and programming teams to integrate visual and technical elements seamlessly.</li>
                     <li>Creating detailed design documents and prototypes for new features and gameplay systems.</li>
                     <li>Conducting playtests and gathering feedback to refine and balance game mechanics.</li>
                     <li>Mentoring junior designers and providing guidance on best practices in game design and development.</li>
                 </ul>
 
-                <h3>Boss fight - Tancred Master of Castigations</h3>
+                <h3>Boss fight - Tancred, Master of Castigations</h3>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-6">
-                            <span class="image fit"><img src="images/Tancred.jpg" alt="Tancred Master of Castigations" /></span>
+                            <span class="image fit"><img src="images/Tancred.jpg" alt="Tancred, Master of Castigations" /></span>
                         </div>
                         <div class="col-6">
                             <p>
@@ -82,35 +105,35 @@
                     </div>
                 </div>
 
-				<h3>Boss fight - Adyr, the Berefit Exile</h3>
+                <h3>Boss fight - Adyr, the Bereft Exile</h3>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-6">
-                            <span class="image fit"><img src="images/Adyr.jpg" alt="Tancred Master of Castigations" /></span>
+                            <span class="image fit"><img src="images/Adyr.jpg" alt="Adyr, the Bereft Exile" /></span>
                         </div>
                         <div class="col-6">
                             <p>
                                 What I did: Combat design, balancing.
-								Enemy design; Adyr worshipper, AI with BT and EQS.
-								Level design. This level was totally designed by me from scratch. Worked closely with environment team.
-								Animation design. MoCap sessions.
-								Sound integration.
+                                Enemy design; Adyr worshipper, AI with BT and EQS.
+                                Level design. This level was totally designed by me from scratch. Worked closely with environment team.
+                                Animation design. MoCap sessions.
+                                Sound integration.
                             </p>
                         </div>
                     </div>
                 </div>
 
-				<h3>Boss fight - The Hollow Crow</h3>
+                <h3>Boss fight - The Hollow Crow</h3>
                 <div class="box alt">
                     <div class="row gtr-50 gtr-uniform">
                         <div class="col-6">
-                            <span class="image fit"><img src="images/HollowCrow.png" alt="Tancred Master of Castigations" /></span>
+                            <span class="image fit"><img src="images/HollowCrow.png" alt="The Hollow Crow" /></span>
                         </div>
                         <div class="col-6">
                             <p>
-                                Combat design, including AI, phases, attack types and animation tweaking, balancing. 
-								Animation design. MoCap sessions.
-								Sound integration.
+                                Combat design, including AI, phases, attack types and animation tweaking, balancing.
+                                Animation design. MoCap sessions.
+                                Sound integration.
                             </p>
                         </div>
                     </div>
@@ -119,6 +142,67 @@
                 <p>
                     Working on "Lords of the Fallen" has been an incredible journey, allowing me to combine my passion for game design with my technical skills to create memorable gaming experiences.
                 </p>
+            </section>
+
+            <section class="post" id="virtuos">
+                <header class="major">
+                    <h1>Virtuos</h1>
+                </header>
+                <p>
+                    Freelance technical designer on an unannounced AAA action title (2025 - Present). I design, implement and tune NPC combat AI.
+                    The project is under NDA, so the client and the characters are not named, and they appear below as symbols.
+                </p>
+
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-4 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for bosses">
+                                    <polygon points="50,6 94,50 50,94 6,50" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="50,30 70,50 50,70 30,50" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                            <strong>Bosses</strong>
+                            <p>Boss combat AI and skills.</p>
+                        </div>
+                        <div class="col-4 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for regular enemies">
+                                    <polygon points="50,12 62,24 50,36 38,24" fill="#f0775f"/>
+                                    <polygon points="22,40 34,52 22,64 10,52" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="78,40 90,52 78,64 66,52" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="36,68 48,80 36,92 24,80" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="64,68 76,80 64,92 52,80" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                            <strong>Regular enemies</strong>
+                            <p>Enemies found in open-world encounters.</p>
+                        </div>
+                        <div class="col-4 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for an allied NPC">
+                                    <circle cx="38" cy="50" r="26" fill="none" stroke="#ece8e1" stroke-width="3"/>
+                                    <circle cx="62" cy="50" r="26" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <circle cx="50" cy="50" r="5" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                            <strong>Allied NPC</strong>
+                            <p>A companion that fights alongside the player.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <ul>
+                    <li>Perception, target selection, attack, cooldown and difficulty parameters tuned through a data-driven setup.</li>
+                    <li>Many NPC skills implemented end to end with animation, VFX and audio; many others reworked and fixed.</li>
+                    <li>Daily work with QA to identify and fix issues in NPC behaviour and skills.</li>
+                    <li>Custom animation-retiming tool for an in-house engine.</li>
+                    <li>Unified designer-animator feedback template for the design teams.</li>
+                    <li>Behavior specs and cross-team proposals (VFX, navmesh); presentations to client stakeholders.</li>
+                </ul>
             </section>
 
         </div>
