@@ -123,54 +123,59 @@
 
             <section class="post" id="virtuos">
                 <header class="major">
-                    <h1>Virtuos</h1>
+                    <h1>Virtuos Games - Black Shamrock</h1>
                 </header>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-12">
+                            <!-- Abstract banner: the four NPCs below as symbols. No project art (NDA). -->
+                            <div class="nda-tile nda-hero">
+                                <svg viewBox="0 0 1600 900" role="img" aria-label="Abstract symbols for the four NPCs I worked on: Enemy 1, Boss 1, Allied 1 and Boss 2">
+                                    <defs>
+                                        <pattern id="nda-grid" width="80" height="80" patternUnits="userSpaceOnUse">
+                                            <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.05" stroke-width="2"/>
+                                        </pattern>
+                                    </defs>
+                                    <rect width="1600" height="900" fill="url(#nda-grid)"/>
+                                    <line x1="200" y1="450" x2="1400" y2="450" stroke="#f0775f" stroke-opacity="0.35" stroke-width="3" stroke-dasharray="10 14"/>
+                                    <!-- Enemy 1 -->
+                                    <g transform="translate(200 450)">
+                                        <polygon points="0,-70 70,0 0,70 -70,0" fill="#1e252d" stroke="#f0775f" stroke-width="6"/>
+                                        <circle r="14" fill="#f0775f"/>
+                                    </g>
+                                    <!-- Boss 1 -->
+                                    <g transform="translate(600 450)">
+                                        <polygon points="0,-130 130,0 0,130 -130,0" fill="#1e252d" stroke="#f0775f" stroke-width="7"/>
+                                        <polygon points="0,-58 58,0 0,58 -58,0" fill="#f0775f"/>
+                                    </g>
+                                    <!-- Allied 1 -->
+                                    <g transform="translate(1000 450)">
+                                        <circle cx="-36" r="78" fill="#1e252d" stroke="#ece8e1" stroke-width="6"/>
+                                        <circle cx="36" r="78" fill="none" stroke="#f0775f" stroke-width="6"/>
+                                        <circle r="14" fill="#f0775f"/>
+                                    </g>
+                                    <!-- Boss 2 -->
+                                    <g transform="translate(1400 450)">
+                                        <rect x="-92" y="-92" width="184" height="184" fill="#1e252d" stroke="#f0775f" stroke-width="7"/>
+                                        <polygon points="0,-130 130,0 0,130 -130,0" fill="none" stroke="#f0775f" stroke-width="7"/>
+                                        <polygon points="0,-46 46,0 0,46 -46,0" fill="#f0775f"/>
+                                    </g>
+                                    <g fill="#9aa3ad" font-family="Source Sans Pro, Helvetica, sans-serif" font-weight="900" font-size="30" letter-spacing="5" text-anchor="middle">
+                                        <text x="200" y="640">ENEMY 1</text>
+                                        <text x="600" y="640">BOSS 1</text>
+                                        <text x="1000" y="640">ALLIED 1</text>
+                                        <text x="1400" y="640">BOSS 2</text>
+                                    </g>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <p>
                     Freelance technical designer on an unannounced AAA action title (2025 - Present). I design, implement and tune NPC combat AI.
                     The project is under NDA, so the client and the characters are not named, and they appear below as symbols.
                 </p>
-
-                <div class="box alt">
-                    <div class="row gtr-50 gtr-uniform">
-                        <div class="col-4 col-12-small">
-                            <div class="nda-tile">
-                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for bosses">
-                                    <polygon points="50,6 94,50 50,94 6,50" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                    <polygon points="50,30 70,50 50,70 30,50" fill="#f0775f"/>
-                                </svg>
-                                <span class="nda-label">NDA</span>
-                            </div>
-                            <strong>Bosses</strong>
-                            <p>Boss combat AI and skills.</p>
-                        </div>
-                        <div class="col-4 col-12-small">
-                            <div class="nda-tile">
-                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for regular enemies">
-                                    <polygon points="50,12 62,24 50,36 38,24" fill="#f0775f"/>
-                                    <polygon points="22,40 34,52 22,64 10,52" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                    <polygon points="78,40 90,52 78,64 66,52" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                    <polygon points="36,68 48,80 36,92 24,80" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                    <polygon points="64,68 76,80 64,92 52,80" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                </svg>
-                                <span class="nda-label">NDA</span>
-                            </div>
-                            <strong>Regular enemies</strong>
-                            <p>Enemies found in open-world encounters.</p>
-                        </div>
-                        <div class="col-4 col-12-small">
-                            <div class="nda-tile">
-                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for an allied NPC">
-                                    <circle cx="38" cy="50" r="26" fill="none" stroke="#ece8e1" stroke-width="3"/>
-                                    <circle cx="62" cy="50" r="26" fill="none" stroke="#f0775f" stroke-width="3"/>
-                                    <circle cx="50" cy="50" r="5" fill="#f0775f"/>
-                                </svg>
-                                <span class="nda-label">NDA</span>
-                            </div>
-                            <strong>Allied NPC</strong>
-                            <p>A companion that fights alongside the player.</p>
-                        </div>
-                    </div>
-                </div>
 
                 <ul>
                     <li>Perception, target selection, attack, cooldown and difficulty parameters tuned through a data-driven setup.</li>
@@ -180,6 +185,88 @@
                     <li>Unified designer-animator feedback template for the design teams.</li>
                     <li>Behavior specs and cross-team proposals (VFX, navmesh); presentations to client stakeholders.</li>
                 </ul>
+
+                <article class="entry">
+                <h3>Enemy 1</h3>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for Enemy 1">
+                                    <polygon points="50,22 78,50 50,78 22,50" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <circle cx="50" cy="50" r="6" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <p>Enemy found in open-world encounters.</p>
+                        </div>
+                    </div>
+                </div>
+                </article>
+
+                <article class="entry">
+                <h3>Boss 1</h3>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for Boss 1">
+                                    <polygon points="50,6 94,50 50,94 6,50" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="50,30 70,50 50,70 30,50" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <p>Boss combat AI and skills.</p>
+                        </div>
+                    </div>
+                </div>
+                </article>
+
+                <article class="entry">
+                <h3>Allied 1</h3>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for Allied 1">
+                                    <circle cx="38" cy="50" r="26" fill="none" stroke="#ece8e1" stroke-width="3"/>
+                                    <circle cx="62" cy="50" r="26" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <circle cx="50" cy="50" r="5" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <p>A companion that fights alongside the player.</p>
+                        </div>
+                    </div>
+                </div>
+                </article>
+
+                <article class="entry">
+                <h3>Boss 2</h3>
+                <div class="box alt">
+                    <div class="row gtr-50 gtr-uniform">
+                        <div class="col-6 col-12-small">
+                            <div class="nda-tile">
+                                <svg viewBox="0 0 100 100" role="img" aria-label="Symbol for Boss 2">
+                                    <rect x="21" y="21" width="58" height="58" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="50,9 91,50 50,91 9,50" fill="none" stroke="#f0775f" stroke-width="3"/>
+                                    <polygon points="50,36 64,50 50,64 36,50" fill="#f0775f"/>
+                                </svg>
+                                <span class="nda-label">NDA</span>
+                            </div>
+                        </div>
+                        <div class="col-6 col-12-small">
+                            <p>Boss combat AI and skills.</p>
+                        </div>
+                    </div>
+                </div>
+                </article>
             </section>
 
         </div>
